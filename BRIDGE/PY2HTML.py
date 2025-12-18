@@ -173,4 +173,5 @@ def ROUTE2():
     return render_template("COEFFICIENT.html", result=result, visualizeIY = visImagY, visualizeIX = visImagX)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run
+
