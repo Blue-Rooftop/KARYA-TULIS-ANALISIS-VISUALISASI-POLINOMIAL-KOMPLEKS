@@ -1,0 +1,277 @@
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=League+Spartan:wght@633&display=swap" rel="stylesheet">
+<style>
+body {background-color: #c4caff; padding : 100px}
+
+p {color : white; 
+    font-size: 19.8 px; 
+    font-family: "DM Sans";}
+
+a {font-family: "DM Sans";
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(186, 136, 232);
+    transition : color 0.3s;}
+
+a:hover {transform: scale(1.1);
+    color :rgb(173, 92, 248);
+    opacity : 0.8}
+
+.stayInPlace {position: absolute;
+    left : 357px}
+
+input {position: absolute;
+    left : 367px;
+    background-color: rgb(226, 214, 255);
+    font-family: "DM Sans";
+    font-size: 13px;
+    color : rgb(148, 148, 148);
+    border-radius: 10px; 
+    border-width: 0.3px;
+    height: 26.9px; 
+    margin-top: 13px; 
+    margin-left: 5px;}
+
+.textForSwitch {position: absolute;
+    left : 590px;}
+
+.divSwitch {display: flex;
+    flex-direction: column;
+    position: relative;
+    left : 480px;
+    top : -310;
+    gap: 20px;}
+
+.switchButton {border: none;
+  display : flex;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #7589f3;
+  color: white;
+  text-align: center;
+  align-items: center;
+  font-family: "DM Sans";
+  font-size: 15px;
+  width : 285.9px;
+  height: 75.1px;
+  transition : background-color 0.3s;
+}
+
+.checkAnswer {align-items: center;
+    position : relative;
+    top : -520px;
+    left : 800px;
+    border : none;
+    border-radius: 5px;
+    background-color: #7589f3;
+    font-family: "DM Sans";
+    font-size: 15px;
+    width : 285.9px;
+    height : 75.1px;
+    color :white;
+    cursor: pointer;}
+
+.PD {position: absolute;
+    top : 108;
+    left : 920}
+
+.ID {position: absolute;
+    top : 140;
+    left : 910}
+
+.PE {position: absolute;
+    top : 200;
+    left : 920}
+
+.IE {position: absolute;
+    top : 230;
+    left : 910}
+
+.checkAnswer:hover {background-color: #6e7fe0;
+  transform: scale(1.1)}
+
+input[type = "radio"] {display : none;}
+
+.switchButton:hover {background-color: #6e7fe0;
+  transform: scale(1.1)}
+
+input[type = "radio"]:checked + .switchButton {background-color: #391ca2;}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {-webkit-appearance: none;
+  margin: 0;}
+
+.inputOverTop, .inputUnderTop, .inputRRoot1, .inputIRoot1, .inputRRoot2, .inputIRoot2 {display : flex;}
+
+</style>
+</head>
+
+<body>
+
+<a href="/">← Kembali ke menu</a> |
+<a href="/coefficients">Mode Coefficients</a>
+
+<form method="post">
+
+<div class="inputOverTop">
+    <p>Masukan min x</p>
+    <p class = "stayInPlace">:</p> 
+    <input name = "minX" type="number" required>
+    <p class = "textForSwitch" >Pilihlah salah satu ini untuk<br>program kalkulasi :</p>
+</div>
+
+<div class = "inputUnderTop">
+    <p>Masukan maks x</p>
+    <p class = "stayInPlace">:</p> 
+    <input name = "maxX" type="number" required> 
+</div>
+
+<br>
+
+<div class = "Formula">
+    <p>Root 1 = h + ki | Root 2 = q + pi</p>
+</div>
+
+<br>
+
+<div class = "inputRRoot1">
+    <p>Masukan bagian ril root 1</p>
+    <p class = "stayInPlace">:</p> 
+    <input name = "realRoot1" type="number" step="any" required> 
+</div>
+
+<div class = "inputIRoot1">
+    <p>Masukan bagian imaginer root 1</p>
+    <p class = "stayInPlace">:</p> 
+    <input name = "imagRoot1" type="number" step="any" required> 
+</div>
+
+<div class = "inputRRoot2">
+    <p>Masukan bagian ril root 2</p>
+    <p class = "stayInPlace">:</p> 
+    <input name = "realRoot2" type="number" step="any" required> 
+</div>
+
+<div class = "inputIRoot2">
+    <p>Masukan bagian imaginer root 2</p>
+    <p class = "stayInPlace">:</p> 
+    <input name = "imagRoot2" type="number" step="any" required> 
+</div>
+
+<div class = "divSwitch">
+    <input type = "radio" id = "optionA" name = "switch" value="constantReal" required>
+    <label for="optionA" class="switchButton">Kompleks x dengan koefisien konstanta ril.</label>
+
+    <input type = "radio" id = "optionB" name = "switch" value="constantImag">
+    <label for="optionB" class="switchButton">Kompleks x dengan koefisien konstanta imaginer.</label>
+
+    <input type = "radio" id = "optionC" name = "switch" value="onlyReal">
+    <label for="optionC" class="switchButton">Hanya imaginer x.</label>
+
+    <input type = "radio" id = "optionD" name = "switch" value="onlyImag">
+    <label for="optionD" class="switchButton">Hanya ril x.</label>
+</div>
+
+<div class = "dAndE">
+    <p class = "PD">Masukan d:</p> 
+    <input class = "ID" name = "D" type="number" step="any"> 
+     <p class = "PE">Masukan e:</p> 
+    <input class = "IE" name = "E" type="number" step="any"> 
+</div>
+
+<p id="formulaCReal" style = "position: absolute; top : 290px; left: 1000px;"> I(x) = d + iex</p>
+<p id="formulaCImag" style = "position: absolute; top : 290px; left: 1000px;"> I(x) = dx + ei</p>
+
+<button type="submit" class = "checkAnswer">LIAT HASIL</button>
+
+{% if result %}
+<div style="position: absolute;
+    top: 600px; 
+    left: 100px; 
+    color: white; 
+    font-family: DM Sans;">
+    <h2>Hasil Perhitungan</h2>
+
+    <p>Standard Form: {{ result.standardForm }}</p>
+    <p>Extended Form: {{ result.extendedForm }}</p>
+    <p>Domain: {{ result.domain }}</p>
+    <p>Discriminant: {{ result.disc }}</p>
+    <p>Vertex: {{ result.vertex }}</p>
+    <p>Sum of Roots: {{ result.sORoots }}</p>
+    <p>Product of Roots: {{ result.productsRoots }}</p>
+    <p>x₁: {{ result.r1 }}</p>
+    <p>x₂: {{ result.r2 }}</p>
+
+</div>
+{% endif %}
+
+<p style = "position: absolute;
+    left : 520px;
+    top : 1100px">
+    VISUALISASI XY DAN IMAGINER Y</p>
+
+{% if visualizeIY %}
+<div style="width:800px; 
+    height:600px; 
+    position: absolute;
+    left : 220px;
+    top : 1170px">
+    {{ visualizeIY | safe }}
+</div>
+{% endif %}
+
+<p style = "position: absolute;
+    left : 520px;
+    top : 1900px">VISUALISASI XY DAN IMAGINER X</p>
+
+{% if visualizeIX %}
+<div style="width:800px; 
+    height:600px;
+    position: absolute;
+    left : 220px;
+    top : 1970px">
+    {{ visualizeIX | safe }}
+</div>
+{% endif %}
+
+
+</form>
+<script>
+    const formulaReal = document.getElementById("formulaCReal");
+    const formulaImag = document.getElementById("formulaCImag");
+    const radios = document.querySelectorAll('input[name="switch"]');
+    const dAndE = document.querySelector('.dAndE');
+    const dAndEInputs = dAndE.querySelectorAll('input');
+
+    function updateDEVisibility() {
+        let selected = document.querySelector('input[name="switch"]:checked');
+
+        dAndE.style.display = "none";
+        dAndEInputs.forEach(i => i.disabled = true);
+        formulaReal.style.display = "none";
+        formulaImag.style.display = "none";
+
+        if (!selected) return;
+
+        if (selected.value === "constantReal") {
+            dAndE.style.display = "block";
+            dAndEInputs.forEach(i => i.disabled = false);
+            formulaReal.style.display = "block";
+        }
+
+        if (selected.value === "constantImag") {
+            dAndE.style.display = "block";
+            dAndEInputs.forEach(i => i.disabled = false);
+            formulaImag.style.display = "block";
+            }
+        }
+
+        radios.forEach(radio => {
+            radio.addEventListener("change", updateDEVisibility);
+        });
+
+    updateDEVisibility();
+</script>
+</body>
+</html>
